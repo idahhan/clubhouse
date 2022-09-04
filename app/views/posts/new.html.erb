@@ -1,0 +1,18 @@
+<%= form_with model: @post do |form| %>
+
+  <div>
+    <%= form.label :author %><br>
+    <%= form.text_field :author, value: "#{User.find(session[:user_id]).name}" %><br><br>
+  </div>
+
+  <div>
+    <%= form.label :body, "Enter your post" %><br>
+    <%= form.text_field :body %><br><br>
+  </div>
+
+  <div>
+    <%= form.submit "Create" %>
+  </div>
+
+
+<% end %>
